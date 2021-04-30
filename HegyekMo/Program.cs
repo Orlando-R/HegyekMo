@@ -58,6 +58,35 @@ namespace HegyekMo
             }
             Console.WriteLine($"5. feladat: A legmagasabb hegycsúcs adatai:\n\tNév: {legmagasabb.hegycsucs}\n\tHegység: {legmagasabb.hegyseg}\n\tMagasság: {legmagasabb.magassag}");
 
+            //6. feladat
+
+            Console.Write("6. Feladat: Kérek egy magasságot: ");
+
+            int be = int.Parse(Console.ReadLine());
+            foreach (Hegy h in hegyek)
+            {
+                if (h.magassag > be)
+                {
+                    Console.WriteLine($"\tVan {be} méternél magasabb hegycsúcs: {h.hegycsucs} {h.magassag}");
+                    break;
+                }
+            }
+
+            //7. feladat
+
+            double lab = 3.280839895;
+            int lab3000db = 0;
+
+            foreach (Hegy h in hegyek)
+            {
+                if (h.magassag*lab >= 3000)
+                {
+                    lab3000db++;
+                }
+            }
+            Console.WriteLine($"7. feladat: 3000 lábnál magasabb hegycsúcsok száma : {lab3000db}");
+
+
             Console.ReadLine();
 
         }
